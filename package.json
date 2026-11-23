@@ -1,0 +1,60 @@
+{
+	"name": "@fenlyin/pi-superagent",
+	"version": "0.1.0",
+	"description": "Pi extension. A proactive, always-on super-agent for one GitHub repository: a router that assesses requests and workers that own authorized tickets, each in its own session and directory.",
+	"type": "module",
+	"license": "MIT",
+	"keywords": [
+		"pi-package",
+		"pi",
+		"pi-coding-agent",
+		"pi-extension",
+		"superagent",
+		"super-agent",
+		"github",
+		"autonomous-agent"
+	],
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"bin": {
+		"pi-superagent": "dist/cli.js"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.json",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"check": "npm run typecheck && npm run test && npm run build"
+	},
+	"pi": {
+		"extensions": [
+			"./dist/index.js"
+		]
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*",
+		"@earendil-works/pi-tui": "*",
+		"typebox": "*"
+	},
+	"devDependencies": {
+		"@earendil-works/pi-coding-agent": "^1.5.2",
+		"@earendil-works/pi-tui": "^1.5.2",
+		"@types/node": "^22.20.1",
+		"typebox": "^1.3.6",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.10"
+	},
+	"files": [
+		"dist/",
+		"docs/",
+		"prompts/",
+		"README.md",
+		"LICENSE"
+	],
+	"engines": {
+		"node": ">=22"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
