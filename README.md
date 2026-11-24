@@ -38,10 +38,11 @@ Operator guide with a worked example and troubleshooting: [docs/001-usage.md](do
 ## Install
 
 ```sh
-cd /home/fenlyin/projects/pi-superagent
+git clone https://github.com/fenlyin0420/pi-superagent
+cd pi-superagent
 npm install
 npm run build
-pi install /home/fenlyin/projects/pi-superagent
+pi install $PWD
 ```
 
 The build is not optional: the package's Pi entry is `dist/index.js`, and
@@ -54,7 +55,7 @@ PATH, and a session can load the built file directly:
 
 ```sh
 npm link
-pi -e /home/fenlyin/projects/pi-superagent/dist/index.js
+pi -e $PWD/dist/index.js
 ```
 
 Every Pi session that loads the package joins the state directory: the first one
